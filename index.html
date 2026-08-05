@@ -608,7 +608,51 @@ body.en .modal-box{border-radius:16px 16px 0 0}
   .modal-overlay{position:static;display:block !important;background:white}
   .modal-box{max-width:100%;box-shadow:none;margin:0;animation:none;border-radius:0 !important}
 }
-    /* إخفاء زر الخروج نهائياً بأعلى درجة أولوية */
+/* تصغير عرض زر التفاصيل داخل جدول السجل */
+.history-table .btn-sm[data-receipt-idx] {
+    padding: 3px 6px !important;  /* تقليل الهامش الداخلي (العلوي/السفلي واليمين/اليسار) */
+    min-width: auto !important;   /* إلغاء أي عرض أدنى مفروض على الأزرار */
+    font-size: 10.5px !important; /* تصغير حجم الخط قليلاً ليتناسب مع العرض الأصغر */
+}
+
+/* --- الكود الجديد لضبط محاذاة الجدول وتصغير الزر --- */
+.history-table {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed !important;
+    white-space: normal !important;
+}
+
+.history-table thead { display: table-header-group !important; }
+.history-table tbody { display: table-row-group !important; }
+.history-table tr { display: table-row !important; }
+
+.history-table th, 
+.history-table td {
+    display: table-cell !important;
+    text-align: right !important;
+    vertical-align: middle !important;
+    padding: 8px 4px !important;
+}
+
+body.en .history-table th, 
+body.en .history-table td {
+    text-align: left !important;
+}
+
+/* توزيع عرض الأعمدة */
+.history-table th:nth-child(1), .history-table td:nth-child(1) { width: 38%; } /* المستفيد */
+.history-table th:nth-child(2), .history-table td:nth-child(2) { width: 30%; } /* المبلغ */
+.history-table th:nth-child(3), .history-table td:nth-child(3) { width: 18%; } /* الحالة */
+.history-table th:nth-child(4), .history-table td:nth-child(4) { width: 14%; text-align: center !important; } /* زر التفاصيل */
+
+/* تصغير زر التفاصيل */
+.history-table .btn-sm[data-receipt-idx] {
+    padding: 3px 5px !important;
+    min-width: auto !important;
+    font-size: 10.5px !important;
+}
+/* إخفاء زر الخروج نهائياً بأعلى درجة أولوية */
 #exitBtn, 
 .exit-btn, 
 [id="exitBtn"], 
@@ -623,6 +667,8 @@ button#exitBtn {
     margin: 0 !important;
     border: none !important;
 }
+
+</style>
 
 </style>
 </head>
