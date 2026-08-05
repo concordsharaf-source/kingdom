@@ -9,9 +9,6 @@
     <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#000000">
 <style>
-#exitBtn {
-    display: none !important;
-}
 
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#f5f7fa;min-height:100vh;direction:rtl}
@@ -611,6 +608,22 @@ body.en .modal-box{border-radius:16px 16px 0 0}
   .modal-overlay{position:static;display:block !important;background:white}
   .modal-box{max-width:100%;box-shadow:none;margin:0;animation:none;border-radius:0 !important}
 }
+    /* إخفاء زر الخروج نهائياً بأعلى درجة أولوية */
+#exitBtn, 
+.exit-btn, 
+[id="exitBtn"], 
+button#exitBtn {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
 </style>
 </head>
 <body id="body-root">
